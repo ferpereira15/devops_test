@@ -20,12 +20,10 @@ variable "public_key" {
 
 variable "shared_credentials_files" {
     type = list(string)
-    default = "C:/Users/Fer/.aws/credentials" 
 }
 
 variable "shared_config_files" {
     type = list(string)
-    default = "C:/Users/Fer/.aws/config"
 }
 
 variable "region" {
@@ -35,7 +33,7 @@ variable "region" {
 
 variable "profile" {
     type = string
-    default = "tf"
+    default = "terraform"
 }
 
 
