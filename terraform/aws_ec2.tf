@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "webservice_instance" {
   ami             = data.aws_ami.ubuntu.id
-  instance_type   = "t2.nano"
+  instance_type   = var.instance_type
   key_name        = aws_key_pair.ec2-key.key_name
   subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.main_security_public.id, aws_security_group.main_security_remote.id]
@@ -28,18 +28,17 @@ resource "aws_instance" "webservice_instance" {
   root_block_device {
     delete_on_termination = true
     encrypted             = true
-    kms_key_id            = ""
     throughput            = "125"
     volume_size           = 10
     volume_type           = "gp3"
     iops                  = "3000"
     tags = {
-      "key" = "value"
+      "project" = var.tag_project
     }
   }
   
   tags = {
-    "key" = "value"
+    "project" = var.tag_project
   }
 }
 
