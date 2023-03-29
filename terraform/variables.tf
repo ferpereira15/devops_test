@@ -18,22 +18,7 @@ variable "public_key" {
     default = ""
 }
 
-variable "shared_credentials_files" {
-    type = list(string)
-}
-
-variable "shared_config_files" {
-    type = list(string)
-}
-
 variable "region" {
     type = string
     default = "sa-east-1"
 }
-
-variable "profile" {
-    type = string
-    default = "terraform"
-}
-
-
