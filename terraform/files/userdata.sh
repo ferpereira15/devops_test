@@ -9,5 +9,5 @@ systemctl enable docker
 mkdir /tmp/webservice-devopsteste
 git clone https://github.com/ferpereira15/devops_test.git /tmp/webservice-devopsteste
 cd /tmp/webservice-devopsteste/
-docker build . -t web_app
-docker run -p 8080:8080 web_app
+docker build . -t web_app 
+docker run -d -p 8080:8080 web_app -n web_app

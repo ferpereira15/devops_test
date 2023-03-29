@@ -23,7 +23,7 @@ resource "aws_security_group" "main_security_public" {
   }
 }
 
-resource "aws_security_group" "main_security_remote" {
+/* resource "aws_security_group" "main_security_remote" {
   name        = "remote"
   description = "Allow remote SSH access"
   vpc_id      = aws_vpc.main_vpc.id
@@ -46,4 +46,4 @@ resource "aws_security_group" "main_security_remote" {
   tags = {
     Name = "allow_tls"
   }
-}
+} */
