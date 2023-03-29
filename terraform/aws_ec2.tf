@@ -21,6 +21,8 @@ resource "aws_instance" "webservice_instance" {
   subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.main_security_public.id, aws_security_group.main_security_remote.id]
 
+  user_data_base64 = filebase64("./files/userdata.sh")
+  user_data_replace_on_change = true
   monitoring = false
 
   root_block_device {
@@ -35,9 +37,7 @@ resource "aws_instance" "webservice_instance" {
       "key" = "value"
     }
   }
-
-  user_data_base64 = filebase64("./files/userdata.sh")
-
+  
   tags = {
     "key" = "value"
   }
