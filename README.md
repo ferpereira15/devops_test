@@ -16,6 +16,9 @@ Qualque melhoria, crítica e sugestões, serão sempre bem-vindas!
 
 ## Como usar
 
+Inicie o Docker Desktop antes de tudo.
+Se estiver utilizando Docker no Windows, utilize containers Linux.
+
 ### Para uso Local
 
 Acesse o diretório do projeto via terminal (Git Bash ou similares).
